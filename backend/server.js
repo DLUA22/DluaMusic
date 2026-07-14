@@ -4,6 +4,9 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const connectDB = require('./src/config/db.js');
 const songRoutes = require('./src/routes/songRoutes');
+const authRoutes = require('./src/routes/authRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const playlistRoutes = require('./src/routes/playlistRoutes');
 
 dotenv.config();
 
@@ -13,6 +16,10 @@ app.use(helmet());
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 app.use('/api/songs', songRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/playlists', playlistRoutes);
 
 connectDB();
 
