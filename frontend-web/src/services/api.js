@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'https://dluamusic.onrender.com', 
+  baseURL: 'https://dluamusic.onrender.com/api', 
   timeout: 10000,
 });
 
